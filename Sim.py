@@ -8,6 +8,9 @@ class Sim:
     def pushSourceTrack(self, st):
         self.sourceTracks.append(st)
 
+    def pushSourceTracks(self, stList):
+        self.sourceTracks.extend(stList)
+
     def popSourceTrack(self):
         st = self.sourceTracks.pop()
 

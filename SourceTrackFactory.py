@@ -1,14 +1,18 @@
 from SourceTrack import *
 
 class SourceTrackFactory:
-    nextTrackID = 1
+    _nextTrackID = 1
 
-    def createSourceTrack(self):
-        st = SourceTrack(self.nextTrackID)
-        self.nextTrackID += 1
+
+    """
+        There's a danger here, that tracks read in will have the same trackID
+        as new tracks.  Caller will have to
+    """
+    def createSourceTrack(self, trackID):
+        if (trackID != None):
+            st = SourceTrack(trackID)
+        else:
+            st = SourceTrack(self._nextTrackID)
+            self._nextTrackID += 1
 
         return st
-
-
-    def createSourceTrack(self, reader):
-        st = SourceTrack(self.nextTrackID)

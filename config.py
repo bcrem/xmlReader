@@ -3,3 +3,6 @@ tdmKeys = [
     "sourceTrack",
     "systemTrack",
 ]
+
+goodFile = "data/good.xml"
+badFile =  "data/bad.xml"

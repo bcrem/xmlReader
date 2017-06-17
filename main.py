@@ -1,20 +1,16 @@
 #!/usr/bin/python
 
 from Sim import Sim
-from SourceTrackFactory import *
-from SystemTrackFactory import *
+from config import *
 
 
+import XmlReader
+
+
+xr = XmlReader.XmlReader(goodFile)
 s = Sim()
-stf = SourceTrackFactory()
-systf = SystemTrackFactory()
 
-s.pushSourceTrack(stf.createSourceTrack())
-s.pushSourceTrack(stf.createSourceTrack())
-s.pushSourceTrack(stf.createSourceTrack())
-s.pushSourceTrack(stf.createSourceTrack())
-
-st = s.popSourceTrack()
-print st
+stList = xr.extractSourceTracks()
+s.pushSourceTracks(stList)
 
 s.listSourceTracks()
