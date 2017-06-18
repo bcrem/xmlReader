@@ -1,16 +1,18 @@
 #!/usr/bin/python
 
+import StatsReader
+
 from Sim import Sim
 from config import *
 
 
-import XmlReader
-
-
-xr = XmlReader.XmlReader(goodFile)
+xr = StatsReader.StatsReader(goodFile)
 s = Sim()
 
 stList = xr.extractSourceTracks()
-s.pushSourceTracks(stList)
+s.pushTracks(stList)
 
-s.listSourceTracks()
+systList = xr.extractSystemTracks()
+s.pushTracks(systList)
+
+s.listTracks()

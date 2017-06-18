@@ -1,10 +1,13 @@
 from SystemTrack import *
 
 class SystemTrackFactory:
-    nextTrackID = 1
+    _nextTrackID = 1
 
-    def createSystemTrack(self):
-        st = SystemTrack(self.nextTrackID)
-        self.nextTrackID += 1
+    def createSystemTrack(self, trackID):
+        if (trackID != None):
+            st = SystemTrack(trackID)
+        else:
+            st = SystemTrack(self._nextTrackID)
+            self._nextTrackID += 1
 
         return st

@@ -1,17 +1,24 @@
 class Sim:
     sourceTracks = []
+    systemTracks = []
 
-    def listSourceTracks(self):
+    def listTracks(self):
         for st in self.sourceTracks:
             print st
 
-    def pushSourceTrack(self, st):
-        self.sourceTracks.append(st)
+        for syst in self.systemTracks:
+            print syst
 
-    def pushSourceTracks(self, stList):
-        self.sourceTracks.extend(stList)
+    def pushTrack(self, trk):
+        if (trk != None):
+            if trk.__class__.__name__ == "SystemTrack":
+                self.systemTracks.append(trk)
+            else:
+                self.sourceTracks.append(trk)
 
-    def popSourceTrack(self):
-        st = self.sourceTracks.pop()
-
-        return st
+    def pushTracks(self, trkList):
+        if (len(trkList) > 0):
+            if trkList[0].__class__.__name__ == "SystemTrack":
+                self.systemTracks.extend(trkList)
+            else:
+                self.sourceTracks.extend(trkList)
