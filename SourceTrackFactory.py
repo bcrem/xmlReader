@@ -6,7 +6,7 @@ class SourceTrackFactory:
 
     """
         There's a danger here, that tracks read in will have the same trackID
-        as new tracks.  Caller will have to
+        as new tracks.  Caller will have to insure this doesn't happen.
     """
     def createSourceTrack(self, trackID):
         if (trackID != None):

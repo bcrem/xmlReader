@@ -6,3 +6,4 @@ tdmKeys = [
 
 goodFile = "data/good.xml"
 badFile =  "data/bad.xml"
+eventLog =  "data/event.log"
